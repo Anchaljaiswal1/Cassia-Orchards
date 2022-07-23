@@ -25,6 +25,75 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+    <style>
+      /* Button used to open the contact form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+      
+      /* The popup form - hidden by default */
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+      }
+      
+      /* Full-width input fields */
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      /* When the inputs get focus, do something */
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+      
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+    </style>
 </head>
 
 <body>
@@ -98,7 +167,7 @@
     <div class="header-bottom">
       <div class="container">
 
-        <a href="#" class="logo">
+        <a href="https://cassiainfrastructure.com/" class="logo">
           <img src="./assets/images/logo.png" alt="CassiaOrchards logo">
         </a>
 
@@ -106,7 +175,7 @@
 
           <div class="navbar-top">
 
-            <a href="#" class="logo">
+            <a href="https://cassiainfrastructure.com/" class="logo">
               <img src="./assets/images/logo.png" alt="CassiaOrchards logo">
             </a>
 
@@ -120,7 +189,7 @@
             <ul class="navbar-list">
 
               <li>
-                <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                <a href="https://cassiainfrastructure.com/" class="navbar-link" data-nav-link>Home</a>
               </li>
 
               <li>
@@ -132,7 +201,7 @@
               </li>
 
               <li>
-                <a href="orchards.html" class="navbar-link" data-nav-link>Orchard</a>
+                <a href="orchards" class="navbar-link" data-nav-link>Orchard</a>
               </li>
 
               <li>
@@ -140,7 +209,7 @@
               </li>
 
               <li>
-                <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+                <a href="contact" class="navbar-link" data-nav-link>Contact</a>
               </li>
 
             </ul>
@@ -224,7 +293,22 @@
   
             </ul>
 
-            <button class="btn">Want to know more? Make An Enquiry.</button>
+            <button class="btn" onclick="openForm()">Want to know more? Make An Enquiry.</button>
+
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                <h1>Contact Us</h1>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="pno"><b>Phone Number</b></label>
+                <input type="text" placeholder="Enter Phone Number" name="pno" required>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form>
+            </div>
             
 
           </div>
@@ -430,6 +514,15 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 
 </body>
 
