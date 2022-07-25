@@ -407,6 +407,10 @@ button, a { transition: var(--transition); }
   display: block;
 }
 
+.dropdown:focus .dropdown-content {
+  display: block;
+}
+
 .overlay {
   position: fixed;
   inset: 0;

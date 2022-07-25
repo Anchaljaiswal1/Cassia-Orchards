@@ -94,15 +94,16 @@
       .form-container .btn:hover, .open-button:hover {
         opacity: 1;
       }
+
     </style>
 </head>
 
 <body>
 
+
   <!-- 
     - #HEADER
   -->
-
   <header class="header" data-header>
 
     <div class="overlay" data-overlay></div>
@@ -172,9 +173,9 @@
           <img src="./assets/images/logo.png" alt="Cassia Infrastructure logo">
         </a>
 
-        <nav class="navbar" data-navbar>
+        <nav class="navbar" data-navbar  onclick="void(0)">
 
-          <div class="navbar-top">
+          <div class="navbar-top" onclick="void(0)">
 
             <a href="https://cassiainfrastructure.com/" class="logo">
               <img src="./assets/images/logo.png" alt="Cassia Infrastructure logo">
@@ -186,7 +187,7 @@
 
           </div>
 
-          <div class="navbar-bottom">
+          <div class="navbar-bottom"  onclick="void(0)">
             <ul class="navbar-list">
 
               <li>
@@ -203,7 +204,7 @@
 
               <li>
                 <div class="dropdown">
-                  <button class="navbar-link" data-nav-link>Projects <i class="fa fa-caret-down"></i> </button>
+                  <button class="navbar-link">Projects <i class="fa fa-caret-down"></i> </button>
                   <div class="dropdown-content">
                     <a href="orchards" class="navbar-link" data-nav-link style="padding: 12px 16px;">Orchards</a>
                   </div>
@@ -236,10 +237,6 @@
 
   </header>
 
-
-
-
-
   <main>
     <article>
 
@@ -263,23 +260,6 @@
             <p class="hero-text">
               The Cassia Orchards is a beautiful and complex community where tress, plants and birds live in delicate balance...
             </p>
-
-            <button class="btn" onclick="openForm()">Want to know more? Make An Enquiry.</button>
-            <div class="form-popup" id="myForm">
-              <form action="/action_page.php" class="form-container">
-                <h1>Contact Us</h1>
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-                <label for="pno"><b>Phone Number</b></label>
-                <input type="text" placeholder="Enter Phone Number" name="pno" required>
-
-                <button type="submit" class="btn">Send</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-              </form>
-            </div>
-
           </div>
 
           <!-- <figure class="hero-banner">
@@ -1048,14 +1028,9 @@
     </article>
   </main>
 
-
-
-
-
   <!-- 
     - #FOOTER
   -->
-
   <footer class="footer">
 
     <div class="footer-top">
@@ -1176,10 +1151,6 @@
 
   </footer>
 
-
-
-
-
   <!-- 
     - custom js link
   -->
@@ -1199,6 +1170,7 @@
       document.getElementById("myForm").style.display = "none";
     }
   </script>
+
 </body>
 
 </html>
