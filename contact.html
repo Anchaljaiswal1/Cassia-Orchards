@@ -46,6 +46,7 @@
         position: fixed;
         bottom: 0;
         right: 15px;
+        border-radius: 10px;
         border: 3px solid #f1f1f1;
         z-index: 9;
       }
@@ -133,32 +134,32 @@
           <ul class="header-top-social-list">
 
             <li>
-              <a href="#" class="header-top-social-link">
+              <a href="https://www.facebook.com/Cassia-Infrastructure-100225406122465" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="header-top-social-link">
+              <a href="https://twitter.com/cassiainfrastr1" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a href="https://www.linkedin.com/company/cassia-infrastructure/?viewAsMember=true" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
+              <a href="https://www.instagram.com/cassiainfrastructure/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
           </ul>
 
-          <button class="header-top-btn">Contact Us</button>
+          <button class="header-top-btn" onclick="openForm()">Contact Us</button>
         </div>
 
       </div>
@@ -296,18 +297,9 @@
             <button class="btn" onclick="openForm()">Want to know more? Make An Enquiry.</button>
 
             <div class="form-popup" id="myForm">
-              <form action="/action_page.php" class="form-container">
-                <h1>Contact Us</h1>
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-                <label for="pno"><b>Phone Number</b></label>
-                <input type="text" placeholder="Enter Phone Number" name="pno" required>
-
-                <button type="submit" class="btn">Send</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-              </form>
+              <div id="ff-compose"></div>
+              <script async defer src="https://formfacade.com/include/111708862469279529188/form/1FAIpQLSfh1ISiP4oGmhJIGjVMRRMpMGL6u47MmtVYuZzHbE60pRXkvw/classic.js?div=ff-compose"></script>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </div>
             
 
@@ -358,26 +350,26 @@
           <ul class="social-list">
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.facebook.com/Cassia-Infrastructure-100225406122465" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://twitter.com/cassiainfrastr1" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.linkedin.com/company/cassia-infrastructure/?viewAsMember=true" class="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
+              <a href="https://www.instagram.com/cassiainfrastructure/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 

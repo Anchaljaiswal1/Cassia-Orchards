@@ -25,6 +25,75 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+    <style>
+      /* Button used to open the contact form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+      
+      /* The popup form - hidden by default */
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+      }
+      
+      /* Full-width input fields */
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      /* When the inputs get focus, do something */
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+      
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+    </style>
 </head>
 
 <body>
@@ -64,32 +133,33 @@
           <ul class="header-top-social-list">
 
             <li>
-              <a href="#" class="header-top-social-link">
+              <a href="https://www.facebook.com/Cassia-Infrastructure-100225406122465" class="header-top-social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
-            <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
 
             <li>
-              <a href="#" class="header-top-social-link">
+              <a href="https://www.instagram.com/cassiainfrastructure/" class="header-top-social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="header-top-social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
+              <a href="https://www.linkedin.com/company/cassia-infrastructure/?viewAsMember=true" class="header-top-social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/cassiainfrastr1" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
 
           </ul>
 
-          <button class="header-top-btn">Contact Us</button>
+          <button class="header-top-btn" onclick="openForm()">Contact Us</button>
         </div>
 
       </div>
@@ -181,10 +251,6 @@
 
   </header>
 
-
-
-
-
   <main>
     <article>
 
@@ -206,15 +272,29 @@
               Exemplary Lifestyle</h2>
 
             <p class="hero-text">
-              The Cassia Orchards is a beautiful and complex community where tress, plants and birds live in delicate balance...
+              Life is being recreated through the lenses of nature, science, humanity, and beyond. Get ready to drive into a life-changing commitment.
             </p>
 
-            <button class="btn">Want to know more? Make An Enquiry.</button>
+            <button class="btn" onclick="openForm()"> Enquire Now </button>
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                <h1>Contact Us</h1>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="pno"><b>Phone Number</b></label>
+                <input type="text" placeholder="Enter Phone Number" name="pno" required>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form>
+            </div>
 
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/day.png" alt="Modern house model" class="w-100">
+            <img src="./assets/images/CASSIA1.png" alt="Modern house model" class="w-100">
           </figure>
 
         </div>
@@ -234,12 +314,14 @@
 
           <div class="about-content">
 
-            <p class="section-subtitle">About Us</p>
+            <p class="section-subtitle">Cassia Orchard</p>
 
             <h2 class="h2 section-title">A Beautiful Community of Villas, Trees and Birds.</h2>
 
             <p class="about-text">
-              The residential abodes at Kakkanad in 4 Acres of Land, Prides itself with Two, Three and Four BHK Villas ranging from 1400 Sq ft to 2400 Sq ft.
+              <b>Cassia Orchard</b> is a wonderful and diverse community where trees, plants, and birds live peacefully in exquisite harmony with modern living.
+              <br><br>
+              The villas built in the midst of the woods interface magnificiently with nature, seamlessly integrating into the enduring environment via their beautiful landscapes and design, delivering a beautifully chosen range of high-living and ultimate comfort that looks attractive.
             </p>
 
             <ul class="about-list">
@@ -279,12 +361,8 @@
             </ul>
 
             <p class="callout">
-              "Walk across the orchard will take you through acrs of fruit bearing tress and lush green forests
-              , where the sound of chirping birds fill the air with lovely melodious chatter..."
+              "A walk through the orchard will take you across acres of fruit bearing trees and beautiful green woodlands, where chirping birds fill the air with delightful musical chatter"
             </p>
-
-            <a href="#service" class="btn">Our Services</a>
-
           </div>
 
         </div>
@@ -296,9 +374,8 @@
       <section class="service" id="service">
         <div class="container">
 
-          <p class="section-subtitle">Our Services</p>
 
-          <h2 class="h2 section-title">The Orchards Variations</h2>
+          <h2 class="h2 section-title">Types of Villas</h2>
 
           <ul class="service-list">
 
@@ -310,20 +387,12 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">3BHK Villas</a>
+                  <a href="#">3BHK Villa</a>
                 </h3>
 
                 <p class="card-text">
-                  over 1 million+ homes for sale available on the website, we can match you with a house you will want
-                  to call home.
+                  Over 22 Villas for sale are available. 1400 Sq.Ft. consists of three bedroom.
                 </p>
-
-                <a href="#" class="card-link">
-                  <span>Find A Home</span>
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
-
               </div>
             </li>
 
@@ -335,19 +404,14 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">4BHK Villas</a>
+                  <a href="#">4BHK Villa</a>
                 </h3>
 
                 <p class="card-text">
-                  over 1 million+ homes for sale available on the website, we can match you with a house you will want
-                  to call home.
+                  Over 22 Villas for sale are available. 1800 Sq.Ft. consists of four bedroom.
                 </p>
 
-                <a href="#" class="card-link">
-                  <span>Find A Home</span>
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
+                
 
               </div>
             </li>
@@ -360,19 +424,14 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">5BHK Villas</a>
+                  <a href="#">5BHK Villa</a>
                 </h3>
 
                 <p class="card-text">
-                  over 1 million+ homes for sale available on the website, we can match you with a house you will want
-                  to call home.
+                  Over 21 Villas for sale are available. 2100 Sq.Ft. consists of five bedroom.
                 </p>
 
-                <a href="#" class="card-link">
-                  <span>Find A Home</span>
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
+                
 
               </div>
             </li>
@@ -388,9 +447,7 @@
       <section class="features">
         <div class="container">
 
-          <p class="section-subtitle">Our Aminities</p>
-
-          <h2 class="h2 section-title">Building Aminities</h2>
+          <h2 class="h2 section-title">Amenities</h2>
 
           <ul class="features-list">
 
@@ -398,14 +455,12 @@
               <a href="#" class="features-card">
 
                 <div class="card-icon">
-                  <ion-icon name="car-sport-outline"></ion-icon>
+                  <ion-icon name="home-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Parking Space</h3>
+                <h3 class="card-title">Club House</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -419,9 +474,7 @@
 
                 <h3 class="card-title">Swimming Pool</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -433,11 +486,9 @@
                   <ion-icon name="shield-checkmark-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Private Security</h3>
+                <h3 class="card-title">24*7 Security</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -449,11 +500,9 @@
                   <ion-icon name="fitness-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Medical Center</h3>
+                <h3 class="card-title">Health Club</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -462,14 +511,12 @@
               <a href="#" class="features-card">
 
                 <div class="card-icon">
-                  <ion-icon name="library-outline"></ion-icon>
+                  <ion-icon name="walk-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Library Area</h3>
+                <h3 class="card-title">Jogging Area</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -478,14 +525,12 @@
               <a href="#" class="features-card">
 
                 <div class="card-icon">
-                  <ion-icon name="bed-outline"></ion-icon>
+                  <ion-icon name="musical-notes-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">King Size Beds</h3>
+                <h3 class="card-title">Rooftop Party Area</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -494,14 +539,12 @@
               <a href="#" class="features-card">
 
                 <div class="card-icon">
-                  <ion-icon name="home-outline"></ion-icon>
+                  <ion-icon name="leaf-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Smart Homes</h3>
+                <h3 class="card-title">Vegetables & Fruits Gardening Area</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -513,11 +556,9 @@
                   <ion-icon name="football-outline"></ion-icon>
                 </div>
 
-                <h3 class="card-title">Kid’s Playland</h3>
+                <h3 class="card-title">Children Play Area</h3>
 
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
+                
 
               </a>
             </li>
@@ -531,17 +572,11 @@
         <div class="container">
 
           <figure class="about-banner">
-            <img src="./assets/images/plots.png" alt="House interior">
+            <img src="./assets/images/MASTERPLAN.png" alt="House interior">
           </figure>
 
           <div class="about-content">
-
-            <p class="section-subtitle">Master Plan</p>
-
-            <p class="about-text">
-
-            </p>
-
+            <h2 class="h2 section-title">Master Plan</h2>
             <ul class="about-list">
 
               <li class="about-item">
@@ -605,9 +640,7 @@
       <section class="blog" id="blog">
         <div class="container">
 
-          <p class="section-subtitle">News & Blogs</p>
-
-          <h2 class="h2 section-title">Latest Updates</h2>
+          <h2 class="h2 section-title">Gallery</h2>
 
           <ul class="blog-list has-scrollbar">
 
@@ -617,49 +650,6 @@
                 <figure class="card-banner">
                   <img src="./assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
                 </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Interior</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">The Most Inspiring Interior Design Of 2021</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-07">Jul 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
               </div>
             </li>
 
@@ -669,49 +659,6 @@
                 <figure class="card-banner">
                   <img src="./assets/images/blog-2.jpg" alt="Recent Commercial Real Estate Transactions" class="w-100">
                 </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Estate</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">Recent Commercial Real Estate Transactions</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-07">Jul 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
               </div>
             </li>
 
@@ -722,543 +669,42 @@
                   <img src="./assets/images/blog-3.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
                     class="w-100">
                 </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Room</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">Renovating a Living Room? Experts Share Their Secrets</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-07">Jul 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
               </div>
             </li>
-
           </ul>
 
         </div>
       </section>
 
-            <!-- 
-        - #PROPERTY
+      <!-- 
+      - #Location 
       -->
-      <section class="property" id="property">
+      <section class="features" id="property">
         <div class="container">
 
-          <p class="section-subtitle">Properties</p>
-
-          <h2 class="h2 section-title">Featured Listings</h2>
-
-          <ul class="property-list has-scrollbar">
-
+          <h2 class="h2 section-title">Location</h2>
+          <ul class="blog-list has-scrollbar">
             <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-1.jpg" alt="New Apartment Nice View" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Rs. 34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">New Apartment Nice View</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
+              <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=ആലാച്ചി ജംഗ്ഷൻ&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.kokagames.com/fnf-friday-night-funkin-mods/">Friday Night Funkin Mods</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
+            </li>
+            <li>
+              <div>
+                <div class="about-content">
+                  <h2 class="h2 section-title">Cassia Orchard</h2>
+                  <h4 style="margin-left: 35px;">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <address>Kakkanad, Kochi,  Kerela, India</address>
+                    <br>
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>+0123-456789</span>
+                    <br>
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>sales@cassiainfrastructure.com</span>
+                  </h4>
                 </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/avatar.jpeg" alt="Anchal" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">Anchal Jaiswal</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
               </div>
             </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-2.jpg" alt="Modern Apartments" class="w-100">
-                  </a>
-
-                  <div class="card-badge orange">For Sales</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Rs. 34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Modern Apartments</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/avatar.jpeg" alt="Anchal Jaiswal" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">Anchal Jaiswal</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-3.jpg" alt="Comfortable Apartment" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Rs. 34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Comfortable Apartment</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/avatar.jpeg" alt="Anchal Jaiswal" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">Anchal Jaiswal</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/property-4.png" alt="Luxury villa in Rego Park" class="w-100">
-                  </a>
-
-                  <div class="card-badge green">For Rent</div>
-
-                  <div class="banner-actions">
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="location"></ion-icon>
-
-                      <address>Belmont Gardens, Chicago</address>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="camera"></ion-icon>
-
-                      <span>4</span>
-                    </button>
-
-                    <button class="banner-actions-btn">
-                      <ion-icon name="film"></ion-icon>
-
-                      <span>2</span>
-                    </button>
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Rs. 34,900</strong>/Month
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Luxury villa in Rego Park</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                    <li class="card-item">
-                      <strong>3</strong>
-
-                      <ion-icon name="bed-outline"></ion-icon>
-
-                      <span>Bedrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>2</strong>
-
-                      <ion-icon name="man-outline"></ion-icon>
-
-                      <span>Bathrooms</span>
-                    </li>
-
-                    <li class="card-item">
-                      <strong>3450</strong>
-
-                      <ion-icon name="square-outline"></ion-icon>
-
-                      <span>Square Ft</span>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    <figure class="author-avatar">
-                      <img src="./assets/images/avatar.jpeg" alt="Anchal Jaiswal" class="w-100">
-                    </figure>
-
-                    <div>
-                      <p class="author-name">
-                        <a href="#">Anchal Jaiswal</a>
-                      </p>
-
-                      <p class="author-title">Estate Agents</p>
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="resize-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-
-                    <button class="card-footer-actions-btn">
-                      <ion-icon name="add-circle-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
           </ul>
-
         </div>
       </section>
 
@@ -1270,13 +716,13 @@
 
           <div class="cta-card">
             <div class="card-content">
-              <h2 class="h2 card-title">Looking for your dream home?</h2>
+              <h2 class="h2 card-title">Looking For Your Dream Home</h2>
 
               <p class="card-text">We can help you realize your dream of a new home</p>
             </div>
 
             <button class="btn cta-btn">
-              <span>Explore Properties</span>
+              <span>Contact Us</span>
 
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </button>
@@ -1287,10 +733,6 @@
 
     </article>
   </main>
-
-
-
-
 
   <!-- 
     - #FOOTER
@@ -1330,10 +772,10 @@
             </li>
 
             <li>
-              <a href="mailto:contact@CassiaOrchards.com" class="contact-link">
+              <a href="mailto:sales@cassiainfrastructure.com" class="contact-link">
                 <ion-icon name="mail-outline"></ion-icon>
 
-                <span>contact@CassiaOrchards.com</span>
+                <span>sales@cassiainfrastructure.com</span>
               </a>
             </li>
 
@@ -1342,26 +784,26 @@
           <ul class="social-list">
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.facebook.com/Cassia-Infrastructure-100225406122465" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://twitter.com/cassiainfrastr1" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://www.linkedin.com/company/cassia-infrastructure/?viewAsMember=true" class="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
+              <a href="https://www.instagram.com/cassiainfrastructure/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
@@ -1476,17 +918,13 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; © 2022 Official Website of Cassia Infrastructure. All rights reserved.
+          &copy; 2022 Official Website of Cassia Infrastructure. All rights reserved.
         </p>
 
       </div>
     </div>
 
   </footer>
-
-
-
-
 
   <!-- 
     - custom js link
@@ -1498,7 +936,15 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 </body>
 
 </html>

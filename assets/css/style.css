@@ -200,7 +200,7 @@ button, a { transition: var(--transition); }
 
 .btn:is(:hover, :focus)::before { width: 100%; }
 
-.w-100 { width: 100%; }
+.w-100 { width: 110%;}
 
 .section-subtitle {
   color: var(--orange-soda);
@@ -392,6 +392,20 @@ button, a { transition: var(--transition); }
 }
 
 .navbar-link:is(:hover, :focus) { color: var(--orange-soda); }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  padding: 1px;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .overlay {
   position: fixed;
@@ -1168,8 +1182,21 @@ button, a { transition: var(--transition); }
 
   .has-scrollbar > li { min-width: calc(50% - 12.5px); }
 
+  .hero { 
+    background-image: url(./assets/images/property-1.png);
+  }
 
-
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
   /**
    * SERVICE
    */
@@ -1288,7 +1315,17 @@ button, a { transition: var(--transition); }
     box-shadow: var(--shadow-2);
   }
 
-
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
   /**
    * HERO
@@ -1403,7 +1440,17 @@ button, a { transition: var(--transition); }
   .header-top-list,
   .header-top .wrapper { gap: 30px; }
 
-
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
   /**
    * HERO
@@ -1571,6 +1618,18 @@ button, a { transition: var(--transition); }
     color: var(--dark-jungle-green);
     --fs-5: 1.125rem;
     text-transform: capitalize;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 
   .header { padding-bottom: 87px; }
