@@ -172,31 +172,16 @@ button, a { transition: var(--transition); }
   position: relative;
   background: var(--orange-soda);
   color: var(--white);
-  font-family: var(--ff-poppins);
-  font-size: var(--fs-5);
   text-transform: var(--text-transform, capitalize);
   border: 1px solid var(--orange-soda);
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
   padding: 10px 20px;
   z-index: 1;
 }
 
-.btn:is(:hover, :focus) {
-  background: var(--black);
-  color: var(--dark-jungle-green);
-  border-color: var(--black);
-}
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--white);
-  transition: var(--transition);
-  z-index: -1;
-}
 
 .btn:is(:hover, :focus)::before { width: 100%; }
 

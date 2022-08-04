@@ -203,30 +203,26 @@
   
             </ul>
 
-            <button class="btn" onclick="openForm()">Want to know more? Make An Enquiry.</button>
-
+            <button class="btn" onclick="location.href='orchards';"><b>VIEW PROJECT</b></button>
+            
             <div class="form-popup" id="myForm">
               <div class="login-box" id="login-box">
-                <h2>Contact Us</h2>
+                <button type="button" class="close" onclick="closeForm()"><h2>X</h2></button>
+                <h3>ENQUIRY FORM</h3>
                 <form method="POST" onsubmit="return check();">
                   <div class="user-box">
-                    <input type="text" name="" required="" id="name">
-                    <label>Name</label>
+                    <input type="text" name="" required="" id="name" placeholder="Name">
                   </div>
                   <div class="user-box">
-                    <input type="text" name="" required="" id="phone">
-                    <label>Phone</label>
+                    <input type="tel" name="" required="" id="phone" placeholder="Phone Number">
                   </div>
                   <div class="user-box">
-                    <input type="text" name="" required="" id="email">
-                    <label>Email</label>
+                    <input type="text" name="" required="" id="email" placeholder="Email Id">
                   </div>
                   <div class="user-box">
-                    <input type="text" name="" required="" id="comment">
-                    <label>Comment</label>
+                    <input type="text" name="" required="" id="comment" placeholder="Comment">
                   </div>
                   <button type="submit" onclick="check(event)" name="Submit">Submit</button>
-                  <button type="button" onclick="closeForm()">Close</button>
                   <span class="span" id='message'>{{msg}}</span> 
                 </form>
               </div>
@@ -352,7 +348,7 @@
 
   </footer>
   <div class="sticky">
-    <button class="btn" onclick="openForm()">Make an Enquiry!</button>
+    <button class="header-top-btn" onclick="openForm()">Enquire Now</button>
   </div>
 
   <!-- 
@@ -399,7 +395,7 @@
               element.classList.add('success');
           }
       }).then(function(data) {
-          document.getElementById('message').innerHTML = "Thank you for getting in touch! We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!";
+          document.getElementById('message').innerHTML = "Message Sent Successfully.";
           element.classList.add('success');
       }).catch(function(error) {
           document.getElementById('message').innerHTML = "Success";

@@ -95,26 +95,22 @@
           <button class="header-top-btn" onclick="openForm()">Contact Us</button>
           <div class="form-popup" id="myForm">
             <div class="login-box" id="login-box">
-              <h2>Contact Us</h2>
+              <button type="button" class="close" onclick="closeForm()"><h2>X</h2></button>
+              <h3>ENQUIRY FORM</h3>
               <form method="POST" onsubmit="return check();">
                 <div class="user-box">
-                  <input type="text" name="" required="" id="name">
-                  <label>Name</label>
+                  <input type="text" name="" required="" id="name" placeholder="Name">
                 </div>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="phone">
-                  <label>Phone</label>
+                  <input type="tel" name="" required="" id="phone" placeholder="Phone Number">
                 </div>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="email">
-                  <label>Email</label>
+                  <input type="text" name="" required="" id="email" placeholder="Email Id">
                 </div>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="comment">
-                  <label>Comment</label>
+                  <input type="text" name="" required="" id="comment" placeholder="Comment">
                 </div>
                 <button type="submit" onclick="check(event)" name="Submit">Submit</button>
-                <button type="button" onclick="closeForm()">Close</button>
                 <span class="span" id='message'>{{msg}}</span> 
               </form>
             </div>
@@ -1110,7 +1106,7 @@
 
   </footer>
   <div class="sticky">
-    <button class="btn" onclick="openForm()">Make an Enquiry!</button>
+    <button class="header-top-btn" onclick="openForm()">Enquire Now</button>
   </div>
   <!-- 
     - custom js link
