@@ -16,7 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="./custom.css">
   <!-- 
     - google font link
   -->
@@ -26,76 +26,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-    <style>
-      /* Button used to open the contact form - fixed at the bottom of the page */
-      .open-button {
-        background-color: #555;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
-        position: fixed;
-        bottom: 23px;
-        right: 28px;
-        width: 280px;
-      }
-      
-      /* The popup form - hidden by default */
-      .form-popup {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        right: 15px;
-        border-radius: 10px;
-        border: 3px solid #f1f1f1;
-        z-index: 9;
-      }
-      
-      /* Add styles to the form container */
-      .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
-      }
-      
-      /* Full-width input fields */
-      .form-container input[type=text], .form-container input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-      }
-      
-      /* When the inputs get focus, do something */
-      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-      }
-      
-      /* Set a style for the submit/login button */
-      .form-container .btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
-        opacity: 0.8;
-      }
-      
-      /* Add a red background color to the cancel button */
-      .form-container .cancel {
-        background-color: red;
-      }
-      
-      /* Add some hover effects to buttons */
-      .form-container .btn:hover, .open-button:hover {
-        opacity: 1;
-      }
-    </style>
 </head>
 
 <body>
@@ -276,9 +206,31 @@
             <button class="btn" onclick="openForm()">Want to know more? Make An Enquiry.</button>
 
             <div class="form-popup" id="myForm">
-              <div id="ff-compose"></div>
-              <script async defer src="https://formfacade.com/include/111708862469279529188/form/1FAIpQLSfh1ISiP4oGmhJIGjVMRRMpMGL6u47MmtVYuZzHbE60pRXkvw/classic.js?div=ff-compose"></script>
-              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              <div class="login-box" id="login-box">
+                <h2>Contact Us</h2>
+                <form method="POST" onsubmit="return check();">
+                  <div class="user-box">
+                    <input type="text" name="" required="" id="name">
+                    <label>Name</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="" required="" id="phone">
+                    <label>Phone</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="" required="" id="email">
+                    <label>Email</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="" required="" id="comment">
+                    <label>Comment</label>
+                  </div>
+                  <button type="submit" onclick="check(event)" name="Submit">Submit</button>
+                  <button type="button" onclick="closeForm()">Close</button>
+                  <span class="span" id='message'>{{msg}}</span> 
+                </form>
+              </div>
+              
             </div>
             
 
@@ -399,10 +351,9 @@
     </div>
 
   </footer>
-
-
-
-
+  <div class="sticky">
+    <button class="btn" onclick="openForm()">Make an Enquiry!</button>
+  </div>
 
   <!-- 
     - custom js link
@@ -421,6 +372,40 @@
     
     function closeForm() {
       document.getElementById("myForm").style.display = "none";
+    }
+    function check(event) {
+      event.preventDefault();
+      document.getElementById('message').innerHTML = "checking";
+
+      const url = "https://script.google.com/macros/s/AKfycbz9UG-N3DEDhYuwqass-F_iRghVl8zJBNo2N-CuuI9gc2M5xcSsPMieOcf_cNEN_9h46Q/exec?action=addUser";
+      const data = {"name" : document.getElementById('name').value,
+                  'phone' : document.getElementById('phone').value,
+                  'email' : document.getElementById('email').value,
+                  'comment' : document.getElementById('comment').value
+                  };
+      const other_params = {
+          redirect: "follow",
+          headers : { "content-type" : "text/plain;charset=utf-8"},
+          body : JSON.stringify(data),
+          method : "POST",
+      };
+      const element = document.getElementById('message');
+      fetch(url, other_params)
+          .then(function(response) {
+          if (response.ok) {
+              return response.json();
+          } else {
+              throw new Error("Could not reach the API: " + response.status());
+              element.classList.add('success');
+          }
+      }).then(function(data) {
+          document.getElementById('message').innerHTML = "Thank you for getting in touch! We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!";
+          element.classList.add('success');
+      }).catch(function(error) {
+          document.getElementById('message').innerHTML = "Success";
+          element.classList.add('success');
+      });
+      return true;
     }
   </script>
 

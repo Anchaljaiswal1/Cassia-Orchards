@@ -1,0 +1,142 @@
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 250px;
+    right: 185px;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+  .form-container .success {
+    background-color: rgb(0, 255, 0);
+  }
+
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    margin: 0 0 30px;
+    color: rgb(136, 255, 0);
+    text-align: center;
+  }
+
+  .login-box .span {
+    display: none;
+  }
+
+  .login-box .span.success {
+    margin: 0 0 30px;
+    display: block;
+    color: rgb(136, 255, 0);
+    text-align: center;
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .login-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #f1f1f1;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .login-box button.hover {
+    background: #24deff;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #24deff,
+      0 0 25px #24deff,
+      0 0 50px #24deff,
+      0 0 100px #24deff;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    width: 105px;
+    height: 0px;
+    text-align: right;
+    z-index: 9999;
+    margin-top: -15px;
+  }
+
+  .sticky button {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    display: block;
+    background: rgb(26, 221, 255);
+    text-align: center;
+    height: 40px;
+    width: 185px;
+    padding: 8px 16px;
+    color: rgb(27, 27, 27);
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: solid 1px #333;
+    border-left: solid 1px #333;
+    border-right: solid 1px #fff;
+    border-top: solid 1px #333;
+
+  }
+
+  .sticky button:hover {
+    background: #CCC;
+  }
