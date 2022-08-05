@@ -198,13 +198,13 @@
                 <h3>ENQUIRY FORM</h3>
                 <form method="POST" onsubmit="return check();">
                   <div class="user-box">
-                    <input type="text" name="" required="" id="name" placeholder="Name">
+                    <input type="text" name="" required="" id="name" placeholder="Name" required>
                   </div>
                   <div class="user-box">
-                    <input type="tel" name="" required="" id="phone" placeholder="Phone Number">
+                    <input type="tel" name="" required="" id="phone" placeholder="Phone Number" required>
                   </div>
                   <div class="user-box">
-                    <input type="text" name="" required="" id="email" placeholder="Email Id">
+                    <input type="text" name="" required="" id="email" placeholder="Email Id" required>
                   </div>
                   <div class="user-box">
                     <input type="text" name="" required="" id="comment" placeholder="Comment">
@@ -828,8 +828,10 @@
               element.classList.add('success');
           }
       }).then(function(data) {
-          document.getElementById('message').innerHTML = "Thank you for getting in touch! We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!";
-          element.classList.add('success');
+        alert("Thank you for getting in touch! We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!");
+        document.getElementById('message').innerHTML = "Success";
+        element.classList.add('success');
+        document.getElementById("myForm").style.display = "none";
       }).catch(function(error) {
           document.getElementById('message').innerHTML = "Success";
           element.classList.add('success');
