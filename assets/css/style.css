@@ -1225,6 +1225,7 @@ button, a { transition: var(--transition); }
     justify-content: space-between;
     gap: 20px;
   }
+  
 
 }
 
@@ -1254,7 +1255,10 @@ button, a { transition: var(--transition); }
 
   }
 
-
+  .col {
+    float: left;
+    width: 100%;
+  }
 
   /**
    * REUSED STYLE
