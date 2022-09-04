@@ -89,7 +89,7 @@
     transition: .5s;
     margin-top: 20px;
     letter-spacing: 4px;
-    background: #fa5b3d;
+    background: #0088F9;
   }
 
   .sticky {
@@ -110,7 +110,7 @@
     -o-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     display: block;
-    background: #fa5b3d;
+    background: #0088F9;
     text-align: center;
     height: 40px;
     width: 180px;
@@ -129,7 +129,7 @@
   }
 
   .sticky button:hover {
-    background: #fa5b3d;
+    background: #0088F9;
   }
 
 
