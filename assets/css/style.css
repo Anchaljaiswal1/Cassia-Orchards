@@ -290,7 +290,7 @@ button, a { transition: var(--transition); }
   gap: 5px;
 }
 
-.header-top-link:is(:hover, :focus) { color: var(--prussian-blue); }
+.header-top-link:is(:hover, :focus) { color: black; }
 
 .header-top-link ion-icon {
   color: var(--prussian-blue);
@@ -321,7 +321,7 @@ button, a { transition: var(--transition); }
   padding: 4px 15px;
 }
 
-.header-top-btn:is(:hover, :focus) { --prussian-blue: hsl(7, 72%, 46%); }
+.header-top-btn:is(:hover, :focus) { --prussian-blue: hsl(15, 20%, 96%); color: black;}
 
 .header-bottom {
   background: var(--white);
