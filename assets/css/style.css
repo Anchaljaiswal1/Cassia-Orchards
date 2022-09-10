@@ -861,11 +861,10 @@ button, a { transition: var(--transition); }
   box-shadow: var(--shadow-1);
 }
 
-.features-card:is(:hover, :focus) { background: var(--seashell); }
 
 .features-card .card-icon {
   background: var(--prussian-blue);
-  color: var(--black);
+  color: var(--white);
   width: 60px;
   height: 60px;
   display: grid;
