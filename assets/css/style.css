@@ -1124,7 +1124,7 @@ button, a { transition: var(--transition); }
 
 .copyright a:is(:hover, :focus) { color: var(--prussian-blue); }
 
-
+.mapouter{position:relative;text-align:right;width:300px;height:200px;}.gmap_canvas {overflow:hidden;background:none!important;width:300px;height:200px;}.gmap_iframe {width:300px!important;height:300px!important;}
 
 
 
@@ -1225,7 +1225,7 @@ button, a { transition: var(--transition); }
     justify-content: space-between;
     gap: 10px;
   }
-  
+  .mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}
 
 }
 
