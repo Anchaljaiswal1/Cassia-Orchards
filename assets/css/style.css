@@ -1025,7 +1025,7 @@ button, a { transition: var(--transition); }
 
 .cta-btn:is(:hover, :focus) {
   background: none;
-  color: var(--white);
+  color: var(--black);
   border-color: transparent;
 }
 
